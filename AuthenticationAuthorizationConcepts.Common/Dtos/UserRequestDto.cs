@@ -1,10 +1,7 @@
-﻿using Microsoft.AspNetCore.Identity;
-
-namespace AuthenticationAuthorizationConcepts.Domain.Entities
+﻿namespace AuthenticationAuthorizationConcepts.Common.Dtos
 {
-    public class User : IdentityUser
+    public class UserRequestDto
     {
-        public int UserId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }

@@ -6,7 +6,7 @@ namespace AuthenticationAuthorizationConcepts.Infrastructure.Data
 {
     public class DataBaseContext : IdentityDbContext
     {
-        public DataBaseContext(DbContextOptions dbContextOptions) : base()
+        public DataBaseContext(DbContextOptions<DataBaseContext> dbContextOptions) : base(dbContextOptions)
         { 
         }
 

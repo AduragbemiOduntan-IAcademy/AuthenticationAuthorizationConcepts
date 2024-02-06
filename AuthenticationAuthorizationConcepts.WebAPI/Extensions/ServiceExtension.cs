@@ -1,16 +1,16 @@
-﻿namespace AuthenticationAuthorizationConcepts.WebAPI.Extensions
+﻿using AuthenticationAuthorizationConcepts.Infrastructure.Data;
+using Microsoft.EntityFrameworkCore;
+
+namespace AuthenticationAuthorizationConcepts.WebAPI.Extensions
 {
     public static class ServiceExtension
     {
-        public static void DbConfiguration(this IServiceCollection services)
+        public static void DbConfiguration(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddDbContext()
-
-           /* services.AddDbContext(option =>
+            services.AddDbContext<DataBaseContext>(option =>
             {
-                option.UseSqlServer(configuration.GetConnectionString("Default"),
-                    optionAction => optionAction.MigrationsAssembly(typeof(T).Assembly.FullName));
-            });*/
+                option.UseSqlServer(configuration.GetConnectionString("SqlConnection"));
+            });
         }
 
     }
